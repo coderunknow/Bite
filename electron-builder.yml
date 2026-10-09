@@ -1,0 +1,24 @@
+# Packaging configuration for `npm run desktop:dist` (electron-builder).
+# Build outputs go to release/ (ignored by Git).
+appId: app.bite.studio
+productName: Bite
+copyright: Bite contributors
+directories:
+  output: release
+files:
+  - dist/desktop/**/*
+  - package.json
+asar: true
+extraMetadata:
+  main: dist/desktop/main.cjs
+linux:
+  target:
+    - AppImage
+  category: Graphics
+win:
+  target:
+    - nsis
+mac:
+  target:
+    - dmg
+  category: public.app-category.graphics-design
